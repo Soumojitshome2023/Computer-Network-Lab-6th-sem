@@ -77,7 +77,12 @@ string createHammingCode(const string &dataword)
         int count = 0;
         for (int j = 0; j < totalLength; j++)
         {
-            if (((j + 1) & (1 << i)) && codeword[j] == '1')
+            // For each bit in the codeword, check if the (i-th) parity bit covers this position.
+            // (j + 1) is the 1-based position of the bit.
+            // (1 << i) is the value of the parity bit's position (1, 2, 4, 8, ...).
+            // If the parity bit's bit is set in (j + 1), then this bit is covered by the parity bit.
+            // We also check if the bit is '1' to count it for parity calculation.
+            if ((((j + 1) & (1 << i)) != 0) && codeword[j] == '1')
             {
                 count++;
             }

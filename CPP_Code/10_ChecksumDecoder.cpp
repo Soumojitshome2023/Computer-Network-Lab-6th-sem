@@ -121,3 +121,13 @@ int main()
 
     return 0;
 }
+
+
+/*
+Dataword:      11001100101010101111000011000011
+SegmentLength: 8
+
+Dataword:      11001100101010101111000011000011
+SegmentLength: 8
+
+*/
